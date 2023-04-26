@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sample Graph</title>
+        <script src="./samrockadflajflsajflsafdsafdsaf.js"></script>
+    </head>
+    <body style="margin: 0;">
+        <div style="display: flex; flex-wrap: wrap; height: 100vh;">
+            <div style="width: 100%; height: 49%; margin: 1px;" id="myGraph1"></div>
+            <div style="width: 100%; height: 49%; margin: 1px;" id="myGraph2"></div>
+            <div style="width: 100%; height: 49%; margin: 1px;" id="myGraph3"></div>
+            <div style="width: 100%; height: 49%; margin: 1px;" id="myGraph4"></div>
+        </div>
+        </div>
+    </body>
+    <script>
+        (function() {
+            let ids = ["myGraph1", "myGraph2", "myGraph3", "myGraph4"];
+            getAllGraphsData().then(graphs => {
+                graphs.forEach((element, ind) => {
+                    if (ids[ind]) {
+                        drawGraph(ids[ind], element);
+                    }
+                });
+            })
+        })();
+    </script>
+</html>

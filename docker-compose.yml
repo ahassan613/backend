@@ -1,0 +1,18 @@
+version: '3.0'
+
+services:
+  backend:
+    image: 0.0.0.0:8082/repository/mac:latest
+    hostname: backend
+    container_name: backend
+    restart: always
+    ports:
+            #-  169.60.235.66:2211:22
+      -  0.0.0.0:4469:8000
+
+        #volumes:
+        #- .:/amazon
+    stdin_open: true
+    tty: true
+
+

@@ -1,0 +1,18 @@
+docker_build:
+  tags:
+     - mac
+  stage: build
+  image: docker:latest
+  script:
+    -  docker login 0.0.0.0:8082 -u $NEXUS_REGISTRY_USER -p $NEXUS_REGISTRY_PASSWORD
+    -  docker build -t 0.0.0.0:8082/repository/mac:latest .
+    -  docker push 0.0.0.0:8082/repository/mac:latest
+
+docker_deploy:
+  tags:
+     - mac
+  stage: deploy
+  image: docker:latest
+  script:
+    -  docker-compose up -d
+                                                    

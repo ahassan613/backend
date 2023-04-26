@@ -1,0 +1,10 @@
+docker_build:
+  tags:
+     - mac
+  stage: build
+  image: docker:latest
+  script:
+    -  docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD
+    -  docker build -t ahassan613/testing:latest .
+    -  docker push ahassan613/testing:latest
+
